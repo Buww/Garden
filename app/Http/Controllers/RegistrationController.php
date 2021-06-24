@@ -12,7 +12,7 @@ class RegistrationController extends Controller
         return view('registration/registration');
     }
 
-    public function store() 
+    public function store(Request $request) 
     {
         $random = $this->generateRandomString(3) . $this->generateRandomDigit(2);
 
@@ -30,8 +30,9 @@ class RegistrationController extends Controller
         $children->departure = request('departure');
         $children->code = $random;
         $children->save();
-        
-        return redirect('/');
+
+        //trouver une meilleure façon de le faire
+        return redirect('/')->withErrors(['Votre identifiant enfant est : '.$random]);
     }
 
     private function generateRandomDigit($length) 

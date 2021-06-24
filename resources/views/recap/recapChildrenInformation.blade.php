@@ -31,6 +31,36 @@
                   </div>
               </div>
           </div>
+          <div class="month-picker">
+            <a href="#" class="month-picker-nav" title="Not implemented">&lt;</a>
+            <fieldset class="month-picker-fieldset">
+              <input type="radio" name="month" value="jan" id="jan">
+              <label for="jan" class="month-picker-label">Jan</label>
+              <input type="radio" name="month" value="feb" id="feb">
+              <label for="feb" class="month-picker-label">Feb</label>
+              <input type="radio" name="month" value="mar" id="mar">
+              <label for="mar" class="month-picker-label">Mar</label>
+              <input type="radio" name="month" value="apr" id="apr">
+              <label for="apr" class="month-picker-label">Apr</label>
+              <input type="radio" name="month" value="may" id="may">
+              <label for="may" class="month-picker-label">May</label>
+              <input type="radio" name="month" value="jun" id="jun">
+              <label for="jun" class="month-picker-label">Jun</label>
+              <input type="radio" name="month" value="jul" id="jul">
+              <label for="jul" class="month-picker-label">Jul</label>
+              <input type="radio" name="month" value="aug" id="aug">
+              <label for="aug" class="month-picker-label">Aug</label>
+              <input type="radio" name="month" value="sep" id="sep" checked>
+              <label for="sep" class="month-picker-label">Sep</label>
+              <input type="radio" name="month" value="oct" id="oct">
+              <label for="oct" class="month-picker-label">Oct</label>
+              <input type="radio" name="month" value="nov" id="nov">
+              <label for="nov" class="month-picker-label">Nov</label>
+              <input type="radio" name="month" value="dec" id="dec">
+              <label for="dec" class="month-picker-label">Dec</label>
+            </fieldset>
+            <a href="#" class="month-picker-nav" title="Not implemented">&gt;</a>
+          </div>
           <table class="table table-dark" id="dtBasicExample">
             <thead>
               <tr>
@@ -46,7 +76,7 @@
                 <td>{{ substr($item, 0, 11) }}</td>
                 <td> {{ substr($item, 11, 5) }} </td>
                 <td> {{ substr($item, 30, 6) }} </td>
-                <td> {{ substr($item, 39, 6) }} </td>
+                <td> {{ substr($item, 39, 6) == '+12:00' ? 'Aucun temps' : substr($item, 39, 6)}} </td>
               </tr>
               @endforeach
               <tr>

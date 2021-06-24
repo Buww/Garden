@@ -54,7 +54,7 @@ class RecapController extends Controller
             $childrenAge = (($Months->y) * 12) + ($Months->m);
         }
 
-        //Rend plus facile l'utilisation des donneés
+        //Rend plus facile l'utilisation des donneés, une autres solution seraient de créer une seul table pour les entrées et les sorties.
         for ($i = 0; $i != count($childrenEntries->toArray()); $i++)
         {
             $entry = DateTime::createFromFormat("H:i:s", substr($childrenEntries->toArray()[$i]['entry'], 11, 8));
